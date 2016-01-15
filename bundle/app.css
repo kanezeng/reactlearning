@@ -439,10 +439,10 @@ body, div, span {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -482,6 +482,7 @@ body {
 h1 {
   font-size: 64px;
   font-weight: 100;
+  position: relative;
 }
 
 h2 {
@@ -505,7 +506,15 @@ a:hover {
 }
 
 .section {
-  height: 100vh
+  height: 100vh;
+  
+  -webkit-box-align: center;
+  
+  -webkit-align-items: center;
+  
+      -ms-flex-align: center;
+  
+          align-items: center;
 }
 
 
@@ -517,10 +526,6 @@ a:hover {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  -webkit-flex-shrink: 1;
-      -ms-flex-negative: 1;
-          flex-shrink: 1;
-  background-color: rgba(255,0,0,0.3);
   -webkit-flex-basis: 50px;
       -ms-flex-preferred-size: 50px;
           flex-basis: 50px;
@@ -534,11 +539,9 @@ a:hover {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  background-color: rgba(0,255,0,0.3);
   -webkit-flex-basis: 50px;
       -ms-flex-preferred-size: 50px;
           flex-basis: 50px;
-  padding: 10px 40px;
 }
 
 .others {
@@ -554,4 +557,86 @@ a:hover {
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
+    overflow: hidden;
+}
+
+.img-inside {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+}
+
+#android-robot {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    -webkit-transform: translate(-50%,-50%) rotate(-45deg);
+            transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+
+#slider-control {
+  padding: 3px;
+  z-index: 999;
+  position: fixed;
+  top: 50vh;
+  left: 97vw;
+}
+
+#slider-control a {
+  padding: 3px;
+}
+
+#slider-control .dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+#slider-control .active .dot {
+  background-color: #fff;
+}
+#intro-section {
+  -webkit-align-self: stretch;
+      -ms-flex-item-align: stretch;
+          align-self: stretch;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+#intro-section img {
+    position: relative;
+    z-index: 1000;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+  width: 100vw;
+  height: 100vh;
+    z-index: 100;
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0), rgba(31,30,52,1));
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(31,30,52,1));
+}
+
+.page1 {
+    position: relative;
+    z-index: 1000;
 }

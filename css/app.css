@@ -6,7 +6,7 @@ body, div, span {
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   flex-shrink: 0;
   align-content: flex-start;
@@ -35,6 +35,7 @@ body {
 h1 {
   font-size: 64px;
   font-weight: 100;
+  position: relative;
 }
 
 h2 {
@@ -58,28 +59,99 @@ a:hover {
 }
 
 .section {
-  height: 100vh
+  height: 100vh;
+  
+  align-items: center;
 }
 
 
 .iphone-demo {
   align-self: stretch;
   flex-grow: 1;
-  flex-shrink: 1;
-  background-color: rgba(255,0,0,0.3);
   flex-basis: 50px;
 }
 
 .feature-description {
   align-self: stretch;
   flex-grow: 1;
-  background-color: rgba(0,255,0,0.3);
   flex-basis: 50px;
-  padding: 10px 40px;
 }
 
 .others {
     flex-direction: row;
     align-self: stretch;
     flex-grow: 1;
+    overflow: hidden;
+}
+
+.img-inside {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#android-robot {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+}
+
+
+#slider-control {
+  padding: 3px;
+  z-index: 999;
+  position: fixed;
+  top: 50vh;
+  left: 97vw;
+}
+
+#slider-control a {
+  padding: 3px;
+}
+
+#slider-control .dot {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+#slider-control .active .dot {
+  background-color: #fff;
+}
+#intro-section {
+  align-self: stretch;
+  flex-grow: 1;
+  align-items: center;
+  background-image: url(../img/background.jpg);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+#intro-section img {
+    position: relative;
+    z-index: 1000;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+  width: 100vw;
+  height: 100vh;
+    z-index: 100;
+  background-image: -webkit-linear-gradient(rgba(0,0,0,0), rgba(31,30,52,1));
+  background-image: -o-linear-gradient(rgba(0,0,0,0), rgba(31,30,52,1));
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(31,30,52,1));
+}
+
+.page1 {
+    position: relative;
+    z-index: 1000;
 }
